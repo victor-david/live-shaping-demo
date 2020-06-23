@@ -1,0 +1,35 @@
+﻿<Window
+    x:Class="LiveShapingDemo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Live Shaping Demo" Height="650" Width="1200">
+    <Grid Margin="4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button
+            Name="ButtonStart"
+            HorizontalAlignment="Left"
+            Content="Start"
+            ToolTip="Starts and stops random changing of customer balance"
+            Click="ButtonStartClick"/>
+
+        <HeaderedContentControl Grid.Row="1" Padding="0,2" Header="Customers (balance under 250,000)">
+            <DataGrid ItemsSource="{Binding ListView1}"/>
+        </HeaderedContentControl>
+
+        <HeaderedContentControl Grid.Row="1" Grid.Column="1" Padding="0,2" Header="Customers (balance more than 250,000)">
+            <DataGrid ItemsSource="{Binding ListView2}"/>
+        </HeaderedContentControl>
+
+    </Grid>
+</Window>

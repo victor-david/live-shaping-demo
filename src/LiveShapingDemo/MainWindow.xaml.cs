@@ -71,9 +71,9 @@ namespace LiveShapingDemo
             timer.Tick += TimerTick;
 
         }
-#endregion
+        #endregion
 
-#region Properties
+        #region Properties
         public ListCollectionView ListView1
         {
             get;
@@ -83,8 +83,9 @@ namespace LiveShapingDemo
         {
             get;
         }
-#endregion
+        #endregion
 
+        #region Private methods
         private void ButtonStartClick(object sender, RoutedEventArgs e)
         {
             if (timer.IsEnabled)
@@ -104,7 +105,9 @@ namespace LiveShapingDemo
             int idx = rand.Next(0, customers.Count);
             customers[idx].Balance = rand.Next(Customer.MinBalance, Customer.MaxBalance + 1);
         }
+        #endregion
 
+        #region Private helper class
         private class CustomerComparer : IComparer
         {
             public int Compare(object x, object y)
@@ -116,5 +119,6 @@ namespace LiveShapingDemo
                 return 0;
             }
         }
+        #endregion
     }
 }
